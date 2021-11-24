@@ -57,6 +57,9 @@ export const CommonStyle = StyleSheet.create({
     borderColor: '#E8E8E8',
     borderWidth: 1,
     borderRadius: 5,
+    paddingTop: 20,
+    paddingBottom: 20,
+    alignItems: 'center'
   },
   changeColor: {
     fontSize: 16,

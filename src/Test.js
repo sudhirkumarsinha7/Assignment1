@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   useColorScheme,
   View,
+  Platform,
 } from 'react-native';
 
 import { BillingAddress, ShippingAddress, CardDetails } from './default'
@@ -67,7 +68,7 @@ export default class Test extends React.PureComponent {
 
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
 
-              <Checkbox
+              <Checkbox.Android
                 status={isSameAddress ? 'checked' : 'unchecked'}
                 onPress={() => {
                   this._sameAddress()
@@ -76,7 +77,7 @@ export default class Test extends React.PureComponent {
               <Text>Billing Address is same As Shipping Address</Text>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <Checkbox
+              <Checkbox.Android
                 status={saveLater ? 'checked' : 'unchecked'}
                 onPress={() => {
                   this.setState({ saveLater: !saveLater })
@@ -96,9 +97,12 @@ export default class Test extends React.PureComponent {
 const styles = StyleSheet.create({
   container1: {
     backgroundColor: '#c0c0c0',
+    marginTop: Platform.OS === 'ios' ? 30 : 0
   },
   container: {
     backgroundColor: '#ffffff',
-    margin: 15
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: Platform.OS === 'ios' ? 30 : 0
   },
 });
